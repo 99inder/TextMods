@@ -55,8 +55,8 @@ function App() {
         <div className="container">
 
           <Routes>
-            <Route exact path="/" element={<Textbox mode={mode} showAlert={showAlert} placeholder="Enter your text here" />} />
-            <Route exact path="/about" element={<About mode={mode}/>} />
+            <Route exact path="/TextUtils-React/" element={<Textbox mode={mode} showAlert={showAlert} placeholder="Enter your text here" />} />
+            <Route exact path="/TextUtils-React/about" element={<About mode={mode}/>} />
           </Routes>
 
         </div>
