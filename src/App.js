@@ -49,14 +49,14 @@ function App() {
   //React return starts here
   return (
     <>
-      <Router>
+      <Router basename="/TextUtils-React">
         <Navbar title="Text Utilities" mode={mode} toggleMode={toggleMode} />
         <Alert alert={alert} />
         <div className="container">
 
-          <Routes basename="/TextUtils-React">
+          <Routes>
             <Route exact path="/" element={<Textbox mode={mode} showAlert={showAlert} placeholder="Enter your text here" />} />
-            <Route exact path="/about" element={<About mode={mode}/>} />
+            <Route exact path="/about" element={<About mode={mode} />} />
           </Routes>
 
         </div>
