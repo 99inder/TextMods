@@ -6,7 +6,7 @@ import Alert from './components/Alert';
 import { useState } from 'react';
 import React from "react";
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
   Routes,
   Route,
   // Link
@@ -49,7 +49,7 @@ function App() {
   //React return starts here
   return (
     <>
-      <Router basename="/TextUtils-React">
+      <Router>
         <Navbar title="Text Utilities" mode={mode} toggleMode={toggleMode} />
         <Alert alert={alert} />
         <div className="container">
