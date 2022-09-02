@@ -1,8 +1,14 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import './Textbox.css'
 
 
 export default function Textbox(props) {
+
+    const styles = {
+        backgroundColor: props.mode === "light" ? "white" : "grey",
+        color: props.mode === "light" ? "black" : "white"
+    }
 
     const [text, setText] = useState("");
 
@@ -48,7 +54,7 @@ export default function Textbox(props) {
 
     const handleCopy = () => {
         navigator.clipboard.writeText(text);
-        props.showAlert("Copied to Clipboard","success");
+        props.showAlert("Copied to Clipboard", "success");
     }
 
     const handleOnChange = (event) => {
@@ -62,16 +68,16 @@ export default function Textbox(props) {
                 <div className="mb-3">
                     {/* <label htmlFor="Textbox" className="form-label">Example textarea</label> */}
                     {/* <h1>{props.heading}</h1> */}
-                    <textarea className="form-control my-2" id="Textbox" placeholder={props.placeholder} value={text} rows="8" onChange={handleOnChange} style={{ backgroundColor: props.mode === "light" ? "white" : "grey", color: props.mode === "light" ? "black" : "white" }}></textarea>
+                    <textarea className={`form-control my-2 ${props.mode === 'light' ? 'textDark' : 'textLight'}`} id="Textbox" placeholder={props.placeholder} value={text} rows="8" onChange={handleOnChange} style={styles}></textarea>
                 </div>
 
                 {/*Buttons*/}
                 <div>
-                    <button className="btn btn-primary mx-2 my-1" disabled={text.length===0} onClick={handleUpClick}>Convert to Upper Case</button>
-                    <button className="btn btn-primary mx-2 my-1" disabled={text.length===0} onClick={handleLoClick}>Convert to Lower Case</button>
-                    <button className="btn btn-primary mx-2 my-1" disabled={text.length===0} onClick={handleCapClick}>Capitalize First Word</button>
-                    <button className="btn btn-primary mx-2 my-1" disabled={text.length===0} onClick={handleCopy}>Copy to Clipboard</button>
-                    <button className="btn btn-danger mx-2 my-1" disabled={text.length===0} onClick={handleClearClick}>Clear</button>
+                    <button className="btn btn-primary mx-2 my-1" disabled={text.length === 0} onClick={handleUpClick}>Convert to Upper Case</button>
+                    <button className="btn btn-primary mx-2 my-1" disabled={text.length === 0} onClick={handleLoClick}>Convert to Lower Case</button>
+                    <button className="btn btn-primary mx-2 my-1" disabled={text.length === 0} onClick={handleCapClick}>Capitalize First Word</button>
+                    <button className="btn btn-primary mx-2 my-1" disabled={text.length === 0} onClick={handleCopy}>Copy to Clipboard</button>
+                    <button className="btn btn-danger mx-2 my-1" disabled={text.length === 0} onClick={handleClearClick}>Clear</button>
 
                 </div>
             </div>

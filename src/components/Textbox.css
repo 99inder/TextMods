@@ -1,0 +1,7 @@
+.textDark::placeholder {
+    color: grey;
+}
+
+.textLight::placeholder {
+    color: white;
+}
