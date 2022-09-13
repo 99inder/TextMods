@@ -50,7 +50,7 @@ function App() {
   return (
     <>
       <Router>
-        <Navbar title="Text Utilities" mode={mode} toggleMode={toggleMode} />
+        <Navbar title="TextMods" mode={mode} toggleMode={toggleMode} />
         <Alert alert={alert} />
         <div className="container">
 
